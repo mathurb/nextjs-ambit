@@ -1,2 +1,4 @@
 import FAQ from './FAQ'
-export { FAQ }
+import FAQ2 from './FAQ2'
+
+export { FAQ, FAQ2 }
