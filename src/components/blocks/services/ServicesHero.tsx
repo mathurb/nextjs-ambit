@@ -1,13 +1,13 @@
 import NextLink from 'components/reuseable/links/NextLink'
 import { FC } from 'react'
 import { slideInDownAnimate } from 'utils/animation'
-import Image, { ImageProps } from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 
 type ServiceHeroProps = {
   title?: string
   description?: string
   valueLine?: string
-  imageSrc?: Pick<ImageProps, 'src'>
+  imageSrc?: string | StaticImageData
 }
 
 const ServicesHero: FC<ServiceHeroProps> = ({ title, description, valueLine, imageSrc }: ServiceHeroProps) => {
