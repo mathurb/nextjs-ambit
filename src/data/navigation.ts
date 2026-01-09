@@ -25,7 +25,7 @@ const services = [
         title: 'Tax',
         children: [
           { id: 121, url: '/services/tax-service', title: 'Tax Planning & Advisory' },
-          { id: 122, url: '/services/tax-return', title: 'Tax Return Preparation' },
+          { id: 122, url: '/services/tax-return', title: 'Tax Return Preparation' }
         ]
       },
       { id: 13, url: '/services/financial-reporting', title: 'Financial Reporting', children: [] },
@@ -40,6 +40,10 @@ const services = [
     children: [
       { id: 21, url: '/services/bookkeeping-and-accounting', title: 'Bookkeeping And Accounting' },
       { id: 22, url: '/services/tax-services', title: 'Tax Services' },
+      { id: 23, url: '/services/construction-accounting', title: 'Construction Accounting' },
+      { id: 24, url: '/services/real-estate-accounting', title: 'Real Estate Accounting' },
+      { id: 25, url: '/services/retail-accounting', title: 'Retail Accounting' },
+      { id: 26, url: '/services/hospitality-accounting', title: 'Hospitality Accounting' }
     ]
   }
 ]

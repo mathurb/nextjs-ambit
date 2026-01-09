@@ -1,11 +1,19 @@
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 // -------- custom component -------- //
 import SocialLinks from 'components/reuseable/SocialLinks'
 import NextLink from 'components/reuseable/links/NextLink'
 // -------- data -------- //
 import footerNav from 'data/footer'
 
-const Footer: FC = () => {
+type FooterProps = {
+  tagline?: string
+  button?: ReactElement
+}
+
+const Footer: FC<FooterProps> = (props) => {
+  const { tagline, button } = props
+  const hasConsultBlock = (tagline || button) != undefined
+
   return (
     <footer className="text-inverse" style={{ backgroundColor: '#131a40' }}>
       <div className="container pb-13 pb-md-15">
@@ -23,7 +31,7 @@ const Footer: FC = () => {
             </div>
           </div>
 
-          <div className="col-md-6 col-lg-6">
+          <div className={hasConsultBlock ? 'col-md-3 col-lg-3' : 'col-md-6 col-lg-6'}>
             <div className="widget">
               <h4 className="widget-title text-white mb-3">US Office</h4>
               <address className="pe-xl-15 pe-xxl-17">3133 Little Bear Ln, Buford, GA 30519</address>
@@ -45,6 +53,12 @@ const Footer: FC = () => {
               </ul>
             </div>
           </div>
+          {hasConsultBlock && (
+            <div className="col-md-3 col-lg-3">
+              <p className="text-white mb-3">{tagline}</p>
+              {button && <div>{button}</div>}
+            </div>
+          )}
         </div>
       </div>
     </footer>
